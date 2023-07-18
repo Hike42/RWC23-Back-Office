@@ -144,7 +144,7 @@ export default function DashboardExample() {
             </div>
           </Card>
         </a>
-        <a href="/accréditations" className="text-blue-600 flex h-full">
+        <a href="/accreditations" className="text-blue-600 flex h-full">
           <Card>
             <div className="flex items-center">
               <Title>Accréditations</Title>
@@ -161,22 +161,6 @@ export default function DashboardExample() {
           </Card>
         </a>
       </Grid>
-      <div className="mt-6">
-        <a href="/statistiques" className="text-blue-600">
-          <Card>
-            <div className="flex items-center">
-              <Title className="mr-2">Statistiques</Title>{" "}
-              <Icon
-                icon={InformationCircleIcon}
-                variant="simple"
-                tooltip="Cliquez pour en savoir plus."
-              />
-              <Text className="ml-2">(7 derniers jours)</Text>
-            </div>
-            <Statistics />
-          </Card>
-        </a>
-      </div>
       <div className="mt-6">
         <a href="/demandes" className="text-blue-600">
           <Card>
@@ -243,6 +227,22 @@ export default function DashboardExample() {
                 </TableBody>
               </Table>
             </>
+          </Card>
+        </a>
+      </div>
+      <div className="mt-6">
+        <a href="/statistiques" className="text-blue-600">
+          <Card>
+            <div className="flex items-center">
+              <Title className="mr-2">Statistiques</Title>{" "}
+              <Icon
+                icon={InformationCircleIcon}
+                variant="simple"
+                tooltip="Cliquez pour en savoir plus."
+              />
+              <Text className="ml-2">(7 derniers jours)</Text>
+            </div>
+            <Statistics />
           </Card>
         </a>
       </div>

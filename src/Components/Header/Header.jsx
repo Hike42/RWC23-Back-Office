@@ -24,13 +24,13 @@ const Header = () => {
               Demandes
             </a>
             <a
-              href="/"
+              href="/accreditations"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Accréditations
             </a>
             <a
-              href="/"
+              href="/rapports"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Rapports

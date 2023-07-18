@@ -13,52 +13,40 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
+  Metric,
 } from "@tremor/react";
 import ReactPaginate from "react-paginate";
 
-export type Demandes = {
-  name: string;
+export type Accreditations = {
+  nom: string;
   media: string;
-  match: string;
-  deadline: number;
+  matche: string;
+  statut: any;
   nationalite: string;
-  status: any;
 };
 
-export const requests: Demandes[] = [
+export const accreditations: Accreditations[] = [
   {
-    name: "Peter Oui",
+    nom: "Anna Oui",
     media: "L'Express",
-    match: "FID-NZL",
-    deadline: 12,
+    matche: "FID-NZL",
+    statut: "En attente",
     nationalite: "Français",
-    status: "En attente",
   },
   {
-    name: "Henri Oui",
+    nom: "Anna Oui",
     media: "L'Express",
-    match: "FID-NZL",
-    deadline: 12,
+    matche: "FID-NZL",
+    statut: "En attente",
     nationalite: "Français",
-    status: "En attente",
   },
   {
-    name: "Victor Oui",
+    nom: "Anna Oui",
     media: "L'Express",
-    match: "FID-NZL",
-    deadline: 12,
+    matche: "FID-NZL",
+    statut: "En attente",
     nationalite: "Français",
-    status: "En attente",
   },
-  {
-    name: "Anna Oui",
-    media: "L'Express",
-    match: "FID-NZL",
-    deadline: 12,
-    nationalite: "Français",
-    status: "En attente",
-  },
-  // ...
 ];
 
 const deltaTypes: { [key: string]: DeltaType } = {
@@ -67,19 +55,19 @@ const deltaTypes: { [key: string]: DeltaType } = {
   "En attente": "unchanged",
 };
 
-export default function DashboardExample() {
+export default function AccreditationsPage() {
   const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
 
-  const filteredItems = requests.filter((item) =>
-    item.name.toLowerCase().includes(searchValue.toLowerCase())
+  const filteredItems = accreditations.filter((item) =>
+    item.nom.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
 
   useEffect(() => {
-    setCurrentPage(0); // Réinitialiser la page courante lors d'un changement de filtre ou de recherche
+    setCurrentPage(0);
   }, [filteredItems, searchValue]);
 
   const handlePageClick = (data) => {
@@ -99,7 +87,7 @@ export default function DashboardExample() {
       <Card className="m-10 relative">
         <div className="absolute top-0 right-0 mt-2 mr-2">
           <Title className="mr-8 mt-6">
-            {filteredItems.length} Demande(s) active(s).
+            {filteredItems.length} Accréditation(s) active(s).
           </Title>
         </div>
         <div>
@@ -108,11 +96,11 @@ export default function DashboardExample() {
             justifyContent="start"
             alignItems="center"
           >
-            <Title>Demandes</Title>
+            <Title>Accréditations</Title>
             <Icon
               icon={InformationCircleIcon}
               variant="simple"
-              tooltip="Liste des dernières demandes actives"
+              tooltip="Liste des dernières accréditations actives"
             />
           </Flex>
         </div>
@@ -131,29 +119,25 @@ export default function DashboardExample() {
               <TableHeaderCell>Nom</TableHeaderCell>
               <TableHeaderCell className="text-right">Media</TableHeaderCell>
               <TableHeaderCell className="text-right">Match</TableHeaderCell>
-              <TableHeaderCell className="text-right">Deadline</TableHeaderCell>
+              <TableHeaderCell className="text-right">Statut</TableHeaderCell>
               <TableHeaderCell className="text-right">
                 Nationalité
               </TableHeaderCell>
-              <TableHeaderCell className="text-right">Statut</TableHeaderCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
             {currentItems.map((item) => (
-              <TableRow key={item.name}>
-                <TableCell>{item.name}</TableCell>
+              <TableRow key={item.nom}>
+                <TableCell>{item.nom}</TableCell>
                 <TableCell className="text-right">{item.media}</TableCell>
-                <TableCell className="text-right">{item.match}</TableCell>
+                <TableCell className="text-right">{item.matche}</TableCell>
                 <TableCell className="text-right">
-                  {item.deadline} Jour(s)
-                </TableCell>
-                <TableCell className="text-right">{item.nationalite}</TableCell>
-                <TableCell className="text-right">
-                  <BadgeDelta deltaType={deltaTypes[item.status]} size="xs">
-                    {item.status}
+                  <BadgeDelta deltaType={deltaTypes[item.statut]} size="xs">
+                    {item.statut}
                   </BadgeDelta>
                 </TableCell>
+                <TableCell className="text-right">{item.nationalite}</TableCell>
               </TableRow>
             ))}
           </TableBody>
