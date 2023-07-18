@@ -1,7 +1,6 @@
 import React from "react";
 import Statistics from "../Dashboard/Overview";
-import { Card, Col, Grid, Title } from "@tremor/react";
-import { InformationCircleIcon } from "@heroicons/react/outline";
+import { Title } from "@tremor/react";
 
 const StatisticsPage = () => {
   return (
