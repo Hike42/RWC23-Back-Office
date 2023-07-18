@@ -18,7 +18,7 @@ const Header = () => {
               Back-office
             </a>
             <a
-              href="/"
+              href="/demandes"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Demandes
@@ -36,7 +36,7 @@ const Header = () => {
               Rapports
             </a>
             <a
-              href="/"
+              href="/chat"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Chat
