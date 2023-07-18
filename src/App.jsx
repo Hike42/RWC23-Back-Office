@@ -8,6 +8,8 @@ import AccreditationsPage from "./Components/Accreditations/Accreditations";
 import Rapports from "./Components/Rapports/Rapports";
 import ProfilePage from "./Components/Profil/Profil";
 import StatisticsPage from "./Components/Statistics/Statistics";
+import AccessRequestPage from "./Components/Demandes/AccessRequestPage";
+import DeliveryProcess from "./Components/Accreditations/DeliveryProcess";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Rapports path="/rapports" />
         <ProfilePage path="/profil" />
         <StatisticsPage path="/statistiques" />
+        <AccessRequestPage path="/demandes/:id" />
+        <DeliveryProcess path="/accreditations/:id" />
       </Router>
     </div>
   );

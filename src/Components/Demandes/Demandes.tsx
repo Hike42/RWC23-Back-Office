@@ -14,6 +14,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@tremor/react";
+import { navigate } from "@reach/router";
 import ReactPaginate from "react-paginate";
 
 export type Demandes = {
@@ -90,6 +91,10 @@ export default function DashboardExample() {
     setSearchValue(e.target.value);
   };
 
+  const handleRequest = () => {
+    window.open("/demandes/:id", "_blank");
+  };
+
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredItems.slice(startIndex, endIndex);
@@ -141,7 +146,11 @@ export default function DashboardExample() {
 
           <TableBody>
             {currentItems.map((item) => (
-              <TableRow key={item.name}>
+              <TableRow
+                key={item.name}
+                onClick={handleRequest}
+                className="cursor-pointer"
+              >
                 <TableCell>{item.name}</TableCell>
                 <TableCell className="text-right">{item.media}</TableCell>
                 <TableCell className="text-right">{item.match}</TableCell>
