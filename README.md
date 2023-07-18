@@ -1,7 +1,7 @@
 # RWC23-Back-Office
 
 ```
-npm install
+npm install --legacy-peer-deps
 ```
 
 ```
