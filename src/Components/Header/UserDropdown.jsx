@@ -58,16 +58,18 @@ const UserDropdown = () => {
           }`}
           style={{ top: "100%" }}
         >
-          <button
-            type="button"
-            className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-transparent focus:outline-none transition-opacity duration-300"
-            onClick={() => {
-              // Action pour accéder au profil
-              console.log("Accéder au profil...");
-            }}
-          >
-            Mon profil
-          </button>
+          <a href="/profil">
+            <button
+              type="button"
+              className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-transparent focus:outline-none transition-opacity duration-300"
+              onClick={() => {
+                // Action pour accéder au profil
+                console.log("Accéder au profil...");
+              }}
+            >
+              Mon profil
+            </button>
+          </a>
           <button
             type="button"
             className="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-transparent hover:text-red-500 focus:outline-none transition-opacity duration-300"

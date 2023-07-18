@@ -8,7 +8,7 @@ import {
 
 import React from "react";
 
-import Statistics from "./Statistics";
+import Statistics from "./Overview";
 
 import {
   Card,
