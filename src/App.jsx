@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Link } from "@reach/router";
-import Header from "./components/Header/Header";
+import Header from "/src/components/Header/Header";
 import DashboardExample from "/src/components/Dashboard/Dashboard";
 import ChatPage from "/src/components/Chat/Chat";
 import Demandes from "/src/components/Demandes/Demandes";
