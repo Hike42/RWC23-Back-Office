@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Col, Card, Text, Icon } from "@tremor/react";
 import { ArrowRightIcon } from "@heroicons/react/outline";
+import io from "socket.io-client";
+
+let socket;
 
 const ChatPage = () => {
   const [conversations, setConversations] = useState(
@@ -14,8 +17,37 @@ const ChatPage = () => {
   const nonUserMessageWidth = "80%"; // Ajustez cette valeur selon vos besoins
   const [selectedConversation, setSelectedConversation] = useState(null);
 
+  useEffect(() => {
+    socket = io("http://192.168.200.212:3001");
+
+    socket.on("chat message", (msg) => {
+      setConversations((prevConversations) => {
+        const updatedConversations = [...prevConversations];
+        const conversationIndex = updatedConversations.findIndex(
+          (conversation) => conversation.id === msg.conversationId
+        );
+        if (conversationIndex !== -1) {
+          updatedConversations[conversationIndex].messages.unshift({
+            text: msg.text,
+            sentByUser: false,
+          });
+        }
+        return updatedConversations;
+      });
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
   const handleSendMessage = () => {
-    if (newMessage.trim() !== "") {
+    if (newMessage.trim() !== "" && selectedConversation !== null) {
+      socket.emit("chat message", {
+        text: newMessage,
+        conversationId: selectedConversation,
+      });
+
       setConversations((prevConversations) => {
         const updatedConversations = [...prevConversations];
         updatedConversations[selectedConversation].messages.unshift({

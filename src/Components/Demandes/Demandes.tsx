@@ -14,7 +14,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@tremor/react";
-import { navigate } from "@reach/router";
+import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 export type Demandes = {
@@ -80,7 +80,7 @@ export default function DashboardExample() {
   const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
 
   useEffect(() => {
-    setCurrentPage(0); // Réinitialiser la page courante lors d'un changement de filtre ou de recherche
+    setCurrentPage(0);
   }, [filteredItems, searchValue]);
 
   const handlePageClick = (data) => {
@@ -92,7 +92,9 @@ export default function DashboardExample() {
   };
 
   const handleRequest = () => {
-    window.open("/demandes/:id", "_blank");
+    // Action pour accéder à la page spécifique
+    // Remplace "/admin/demandes/:id" par la route réelle
+    console.log("Accéder à la page spécifique...");
   };
 
   const startIndex = currentPage * itemsPerPage;
@@ -146,12 +148,12 @@ export default function DashboardExample() {
 
           <TableBody>
             {currentItems.map((item) => (
-              <TableRow
-                key={item.name}
-                onClick={handleRequest}
-                className="cursor-pointer"
-              >
-                <TableCell>{item.name}</TableCell>
+              <TableRow key={item.name} className="cursor-pointer">
+                <TableCell>
+                  <Link to={`/admin/demandes/:id`} onClick={handleRequest}>
+                    {item.name}
+                  </Link>
+                </TableCell>
                 <TableCell className="text-right">{item.media}</TableCell>
                 <TableCell className="text-right">{item.match}</TableCell>
                 <TableCell className="text-right">

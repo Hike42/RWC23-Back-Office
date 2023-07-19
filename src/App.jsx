@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import DashboardExample from "./Components/Dashboard/Dashboard";
 import ChatPage from "./Components/Chat/Chat";
@@ -15,17 +15,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
-        <DashboardExample path="/" />
-        <ChatPage path="/chat" />
-        <Demandes path="/demandes" />
-        <AccreditationsPage path="/accreditations" />
-        <Rapports path="/rapports" />
-        <ProfilePage path="/profil" />
-        <StatisticsPage path="/statistiques" />
-        <AccessRequestPage path="/demandes/:id" />
-        <DeliveryProcess path="/accreditations/:id" />
-      </Router>
+      <Routes>
+        <Route path="/admin" element={<DashboardExample />} />
+        <Route path="/admin/chat" element={<ChatPage />} />
+        <Route path="/admin/demandes" element={<Demandes />} />
+        <Route path="/admin/accreditations" element={<AccreditationsPage />} />
+        <Route path="/admin/rapports" element={<Rapports />} />
+        <Route path="/admin/profil" element={<ProfilePage />} />
+        <Route path="/admin/statistiques" element={<StatisticsPage />} />
+        <Route path="/admin/demandes/:id" element={<AccessRequestPage />} />
+        <Route path="/admin/accreditations/:id" element={<DeliveryProcess />} />
+      </Routes>
     </div>
   );
 }

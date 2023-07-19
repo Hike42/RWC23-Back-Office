@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import UserDropdown from "./UserDropdown";
 
@@ -7,40 +8,40 @@ const Header = () => {
     <div className="header">
       <header className="fixed top-0 left-0 w-full bg-white shadow-lg backdrop-filter backdrop-blur-md z-50">
         <div className="container mx-auto px-4 flex items-center">
-          <a href="/">
+          <Link to="/admin/">
             <img src={logo} alt="logo" className="w-20 h-20 mr-10" />
-          </a>
+          </Link>
           <div className="flex-grow">
-            <a
-              href="/"
+            <Link
+              to="/admin/"
               className="text-2xl font-bold text-gray-800 mr-10 font-webbelliscup"
             >
               Back-office
-            </a>
-            <a
-              href="/demandes"
+            </Link>
+            <Link
+              to="/admin/demandes"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Demandes
-            </a>
-            <a
-              href="/accreditations"
+            </Link>
+            <Link
+              to="/admin/accreditations"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Accréditations
-            </a>
-            <a
-              href="/rapports"
+            </Link>
+            <Link
+              to="/admin/rapports"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Rapports
-            </a>
-            <a
-              href="/chat"
+            </Link>
+            <Link
+              to="/admin/chat"
               className="text-xl font-bold text-gray-500 mr-10 font-webbelliscup"
             >
               Chat
-            </a>
+            </Link>
           </div>
           <div className="ml-auto">
             <UserDropdown />

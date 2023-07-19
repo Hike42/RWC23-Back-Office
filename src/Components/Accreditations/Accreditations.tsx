@@ -13,10 +13,9 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
-  Metric,
 } from "@tremor/react";
 import ReactPaginate from "react-paginate";
-import { navigate } from "@reach/router";
+import { Link } from "react-router-dom";
 
 export type Accreditations = {
   nom: string;
@@ -79,10 +78,6 @@ export default function AccreditationsPage() {
     setSearchValue(e.target.value);
   };
 
-  const handleRequest = () => {
-    window.open("/accreditations/:id", "_blank");
-  };
-
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredItems.slice(startIndex, endIndex);
@@ -133,12 +128,10 @@ export default function AccreditationsPage() {
 
           <TableBody>
             {currentItems.map((item) => (
-              <TableRow
-                key={item.nom}
-                onClick={handleRequest}
-                className="cursor-pointer"
-              >
-                <TableCell>{item.nom}</TableCell>
+              <TableRow key={item.nom} className="cursor-pointer">
+                <TableCell>
+                  <Link to={`/admin/accreditations/:id`}>{item.nom}</Link>
+                </TableCell>
                 <TableCell className="text-right">{item.media}</TableCell>
                 <TableCell className="text-right">{item.matche}</TableCell>
                 <TableCell className="text-right">

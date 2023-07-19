@@ -105,7 +105,7 @@ export default function DashboardExample() {
       <Title>Dashboard</Title>
       <Text>Cliquez sur un élément pour en savoir plus.</Text>
       <Grid numItemsLg={3} className="mt-6 gap-6">
-        <a href="/chat" className="text-blue-600 flex h-full">
+        <a href="/admin/chat" className="text-blue-600 flex h-full">
           <Card className="">
             <div className="flex items-center mb-10">
               <Title className="mr-2">Chat 24/7</Title>
@@ -123,7 +123,7 @@ export default function DashboardExample() {
             </div>
           </Card>
         </a>
-        <a href="/rapports" className="text-blue-600 flex h-full">
+        <a href="/admin/rapports" className="text-blue-600 flex h-full">
           <Card>
             <div className="flex items-center">
               <Title className="mr-2">Rapports</Title>
@@ -144,7 +144,7 @@ export default function DashboardExample() {
             </div>
           </Card>
         </a>
-        <a href="/accreditations" className="text-blue-600 flex h-full">
+        <a href="/admin/accreditations" className="text-blue-600 flex h-full">
           <Card>
             <div className="flex items-center">
               <Title>Accréditations</Title>
@@ -162,7 +162,7 @@ export default function DashboardExample() {
         </a>
       </Grid>
       <div className="mt-6">
-        <a href="/demandes" className="text-blue-600">
+        <a href="/admin/demandes" className="text-blue-600">
           <Card>
             <>
               <div>
@@ -231,7 +231,7 @@ export default function DashboardExample() {
         </a>
       </div>
       <div className="mt-6">
-        <a href="/statistiques" className="text-blue-600">
+        <a href="/admin/statistiques" className="text-blue-600">
           <Card>
             <div className="flex items-center">
               <Title className="mr-2">Statistiques</Title>{" "}

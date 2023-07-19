@@ -9,4 +9,5 @@ export default defineConfig({
       external: ["/src/components/Header/Header"],
     },
   },
+  base: "/admin/",
 });
