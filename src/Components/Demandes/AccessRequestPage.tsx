@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Title, Text, Grid, Bold } from "@tremor/react";
 import { navigate } from "@reach/router";
-import "/src/components/Demandes/Shade.css";
+import "./Shade.css";
 
 interface IRequest {
   match: {

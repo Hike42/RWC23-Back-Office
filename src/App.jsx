@@ -1,9 +1,9 @@
 import React from "react";
 import { Router, Link } from "@reach/router";
-import Header from "/src/components/Header/Header";
-import DashboardExample from "/src/components/Dashboard/Dashboard";
-import ChatPage from "/src/components/Chat/Chat";
-import Demandes from "/src/components/Demandes/Demandes";
+import Header from "./Components/Header/Header";
+import DashboardExample from "./Components/Dashboard/Dashboard";
+import ChatPage from "./Components/Chat/Chat";
+import Demandes from "./Components/Demandes/Demandes";
 import AccreditationsPage from "./Components/Accreditations/Accreditations";
 import Rapports from "./Components/Rapports/Rapports";
 import ProfilePage from "./Components/Profil/Profil";
