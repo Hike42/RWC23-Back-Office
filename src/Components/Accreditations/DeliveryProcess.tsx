@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, Title, Text, Grid, Bold } from "@tremor/react";
+import logo from "../../assets/logowhite.svg";
 import "./Shade.css";
 
 interface IRequest {
@@ -55,11 +56,7 @@ export default function DeliveryProcess() {
   return (
     <div className="flex">
       <div className="shade ml-0">
-        <img
-          src="/src/assets/logowhite.svg"
-          alt="Plan du stade"
-          className="image"
-        />
+        <img src={logo} alt="Plan du stade" className="image" />
       </div>
       <div className="ml-12">
         <Title className="ml-4 sticky top-0 mt-28">

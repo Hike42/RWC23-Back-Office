@@ -72,7 +72,7 @@ function App() {
               icon={ExclamationCircleIcon}
             >
               <Flex>
-                <img src="/src/assets/logo.svg" alt="logo" />
+                <img src="./logo.svg" alt="logo" />
                 <Text className="ml-4">
                   Veillez à vérifier auprès des RP (Relations publiques) si le
                   contenu de vos communiqués sont bons et traduits dans les

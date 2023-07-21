@@ -18,7 +18,7 @@ const ChatPage = () => {
   const [selectedConversation, setSelectedConversation] = useState(null);
 
   useEffect(() => {
-    socket = io("http://192.168.200.212:3001");
+    socket = io("http://w2-groupe12.hetic-projects.arcplex.tech:3001/");
 
     socket.on("chat message", (msg) => {
       setConversations((prevConversations) => {

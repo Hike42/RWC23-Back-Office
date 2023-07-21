@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, Title, Text, Grid, Bold } from "@tremor/react";
+import logo from "../../assets/logowhite.svg";
 import "./Shade.css";
 
 interface IRequest {
@@ -103,11 +104,7 @@ export default function AccessRequestPage() {
         </div>
       </div>
       <div className="shade ml-40">
-        <img
-          src="/src/assets/logowhite.svg"
-          alt="Plan du stade"
-          className="image"
-        />
+        <img src={logo} alt="Plan du stade" className="image" />
       </div>
     </div>
   );
